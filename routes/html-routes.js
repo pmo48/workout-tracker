@@ -2,7 +2,6 @@
 var path = require("path");
 const router = require("express").Router();
 
-//module.exports = function(app) {
 
   // GET index html
   router.get("/", function(req, res) {
@@ -14,11 +13,10 @@ const router = require("express").Router();
     res.sendFile(path.join(__dirname, "../public/stats.html"));
   });
 
+  //retrieves exercise html
+
   router.get("/exercise", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/exercise.html"));
   });
-
-//}
-// If no matching route is found default to hom
 
 module.exports = router;
