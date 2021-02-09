@@ -1,7 +1,10 @@
+//uses mongoose to create schema 
+
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
+//fitness schema for collection
 const FitnessSchema = new Schema({
     day: {
         type: Date,
@@ -43,6 +46,7 @@ const FitnessSchema = new Schema({
     ] 
   });
   
+  //creates mongo collection schema model
   const Fitness = mongoose.model("Fitness", FitnessSchema);
   
   module.exports = Fitness;
