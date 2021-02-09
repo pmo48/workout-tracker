@@ -1,7 +1,4 @@
-# workout-tracker
-
-# Workout Tracker[license](https://img.shields.io/github/license/pmo48/employee-template-engine)
-    
+# Workout Tracker[license](https://img.shields.io/github/license/pmo48/workout-tracker)
 ## Table of Contents
 
   - [Description](#description)
@@ -16,23 +13,22 @@
     
 The purpose of this app is to track cardio and resistance workouts, then display historical workout data in a dashboard.
 
-![burger-logger](./public/assets/img/burger.png)
+![burger-logger](./public/Dashboard.png)
     
 ## Installation
     
-- Navigate to "https://glacial-eyrie-30428.herokuapp.com/" 
+- Navigate to "https://workout-tracker-pmo48.herokuapp.com/" 
 - Voila!
     
 ## Usage
     
 - Giving 100% on homework
-- Adding a burger, seeing a list of burgers added
-- Marking a burger has been eaten by clicking "binge", seeing a list of burgers eaten
-- Purging burgers previously eaten 
+- Adding a cardio/resistance exercise to a workout,then adding the complete workout
+- Displaying aggregated stats of various workout metrics
 
 ## Credits
 
--
+- Trilogy for assignment and front-end
     
 ## License
 
