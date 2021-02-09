@@ -1,4 +1,4 @@
-# Workout Tracker[license](https://img.shields.io/github/license/pmo48/workout-tracker)
+# Workout Tracker![license](https://img.shields.io/github/license/pmo48/employee-template-engine)
 ## Table of Contents
 
   - [Description](#description)
