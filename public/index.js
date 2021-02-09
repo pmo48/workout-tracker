@@ -11,3 +11,15 @@ async function init() {
   }
 }
 
+// function calculateTotalDuration(data) {
+//   let totalsD = [];
+
+//   data.forEach((workout) => {
+//     const workoutTotal = workout.duration.reduce((total, { duration }) => {
+
+//         return total + duration;
+    
+//     }, 0);
+
+//     totalsD.push(workoutTotal);
+//   });

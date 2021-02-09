@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const logger = require('morgan');
 
 const Fitness = require("./models/fitness.js");
 
@@ -7,6 +8,8 @@ const Fitness = require("./models/fitness.js");
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+
+app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -23,8 +26,8 @@ mongoose.connect(
   useFindAndModify: false
 });
 
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+app.use(require("./routes/html-routes.js"));
+app.use(require("./routes/api-routes.js"));
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);

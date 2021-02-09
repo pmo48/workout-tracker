@@ -1,10 +1,17 @@
-// const express = require("express");
-// const router = express.Router();
 const Fitness = require("../models/fitness.js");
+const router = require("express").Router();
 
-module.exports = function(router) {
+//module.exports = function(router) {
 router.get("/api/workouts", (req, res) => {
-  Fitness.find({})
+  Fitness.aggregate([
+    {
+      $addFields: {
+        totalDuration: {
+          $sum: '$exercises.duration'
+        }
+      }
+    }
+  ])
     .then(dbFitness => {
       res.json(dbFitness);
     })
@@ -39,7 +46,15 @@ router.post("/api/workouts", ({ body }, res) => {
   
   
   router.get("/api/workouts/range", (req, res) => {
-    Fitness.find({}).limit(7)
+    Fitness.aggregate([
+      {
+        $addFields: {
+          totalDuration: {
+            $sum: '$exercises.duration'
+          }
+        }
+      }
+    ]).sort({ _id: -1 }).limit(7)
       .then(dbFitness => {
         res.json(dbFitness);
       })
@@ -49,7 +64,7 @@ router.post("/api/workouts", ({ body }, res) => {
   });
   
 
-}
+
 
 //code to use router
 // router.get("/api/workouts", (req, res) => {
@@ -97,4 +112,4 @@ router.post("/api/workouts", ({ body }, res) => {
 //       });
 //   });
   
-//   module.exports = router;
+  module.exports = router;
